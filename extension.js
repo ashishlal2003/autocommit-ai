@@ -1,7 +1,7 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 const vscode = require('vscode');
-const { run } = require('./geminiLLM.js');
+const { trackChangesAndCommit } = require('./gitChanges.js');
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -16,7 +16,7 @@ function activate(context) {
 	console.log('Congratulations, your extension "autocommit-ai" is now active!');
 	let disposable = vscode.commands.registerCommand('autocommit-ai.helloWorld', async function () {
 		try {
-			const reply = await run();
+			const reply = await trackChangesAndCommit();
 			vscode.window.showInformationMessage(`Please check the console for the reply: ${reply}`);
 		} catch (error) {
 			console.log(error);

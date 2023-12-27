@@ -8,7 +8,7 @@ async function run() {
   
   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-  const prompt = "Who is India's prime minister?"
+  const prompt = "Who is Japan's prime minister?"
 
   const result = await model.generateContent(prompt);
   const response = await result.response;
