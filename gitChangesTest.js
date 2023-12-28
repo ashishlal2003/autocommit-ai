@@ -41,7 +41,7 @@ function getFileContent(filePath) {
         });
     });
 }
-
+console.log("We're running!");
 // Example usage
 getAllChanges()
     .then(changes => {

@@ -1,10 +1,10 @@
 const { run } = require('./geminiLLM.js');
 const vscode = require('vscode');
-// i am making some changes here
 
 const trackChangesAndCommit = async () => {
     try {
-        
+        //Both functionalities are in the same function because they are related
+        //Get all changes in files
     } catch (error) {
         console.error('Error:', error);
     }
