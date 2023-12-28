@@ -1,18 +1,14 @@
 const { run } = require('./geminiLLM.js');
+const vscode = require('vscode');
 
-const trackChangesAndCommit = async() => {
+const trackChangesAndCommit = async () => {
     try {
-        // const changesMade = await userChanges();
-        const result = await run();
-        // if(result){
-        //     await commitChanges(result);
-        // }
-        return result;
-
+        
     } catch (error) {
-        console.log("Error: ", error);
+        console.error('Error:', error);
     }
 };
+
 
 const userChanges = async() => {
 };
