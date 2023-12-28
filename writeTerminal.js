@@ -5,7 +5,7 @@ const writeTerminal = async () => {
     try {
         // Getting commit message before adding
         const changesOutput = await trackChangesAndCommit();
-        
+
         // Git add .
         exec('git add .', async (errAdd, stdoutAdd, stderrAdd) => {
             if (errAdd || stderrAdd) {
@@ -30,3 +30,7 @@ const writeTerminal = async () => {
 };
 
 writeTerminal();
+
+module.exports = {
+    writeTerminal
+};
