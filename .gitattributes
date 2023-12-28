@@ -1,0 +1,2 @@
+# Force LF line endings for certain files
+*.md text eol=lf

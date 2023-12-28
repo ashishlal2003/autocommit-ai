@@ -1,7 +1,7 @@
 const { exec } = require('child_process');
 
-// Function to get changes in all files
-function getAllChanges() {
+// Function to get unstaged changes in all files
+function getUnstagedChanges() {
     return new Promise((resolve, reject) => {
         exec('git diff --name-only', (err, stdout, stderr) => {
             if (err) {
@@ -14,13 +14,13 @@ function getAllChanges() {
             }
 
             const changedFiles = stdout.split('\n').filter(Boolean);
-            const fileContentsPromises = changedFiles.map(file => getFileContent(file));
+            const fileContentsPromises = changedFiles.map(file => getUnstagedFileDiff(file));
 
             Promise.all(fileContentsPromises)
-                .then(contents => {
+                .then(diffs => {
                     const changes = {};
                     changedFiles.forEach((file, index) => {
-                        changes[file] = contents[index];
+                        changes[file] = diffs[index];
                     });
                     resolve(changes);
                 })
@@ -29,10 +29,10 @@ function getAllChanges() {
     });
 }
 
-// Function to get content of a specific file
-function getFileContent(filePath) {
+// Function to get diff of a specific unstaged file
+function getUnstagedFileDiff(filePath) {
     return new Promise((resolve, reject) => {
-        exec(`git show HEAD:${filePath}`, (err, stdout, stderr) => {
+        exec(`git diff HEAD:${filePath} ${filePath}`, (err, stdout, stderr) => {
             if (err || stderr) {
                 reject(err || stderr);
                 return;
@@ -41,11 +41,11 @@ function getFileContent(filePath) {
         });
     });
 }
-console.log("We're running!");
+
 // Example usage
-getAllChanges()
+getUnstagedChanges()
     .then(changes => {
-        console.log('Changes in files:', changes);
+        console.log('Unstaged changes in files:', changes);
         // Now you can process or send this information to Gemini LLM or use it further in your extension logic
     })
     .catch(error => {
