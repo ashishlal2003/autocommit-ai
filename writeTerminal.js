@@ -5,13 +5,7 @@ const writeTerminal = async () => {
     try {
         // Getting commit message before adding
         const changesOutput = await trackChangesAndCommit();
-        try {
-            // Log the output from trackChangesAndCommit()
-            console.log('Output from trackChangesAndCommit():', changesOutput);
-        } catch (error) {
-            console.error('Error in trackChangesAndCommit:', error);
-        }
-
+        
         // Git add .
         exec('git add .', async (errAdd, stdoutAdd, stderrAdd) => {
             if (errAdd || stderrAdd) {
