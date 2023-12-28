@@ -1,7 +1,6 @@
 const { run } = require('./geminiLLM.js');
 const vscode = require('vscode');
 
-//check iunstaged
 const trackChangesAndCommit = async () => {
     try {
     } catch (error) {
