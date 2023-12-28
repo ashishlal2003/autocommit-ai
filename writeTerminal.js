@@ -3,26 +3,36 @@ const { trackChangesAndCommit } = require('./gitChanges.js');
 
 const writeTerminal = async () => {
     try {
+        // Getting commit message before adding
+        const changesOutput = await trackChangesAndCommit();
+        try {
+            // Log the output from trackChangesAndCommit()
+            console.log('Output from trackChangesAndCommit():', changesOutput);
+        } catch (error) {
+            console.error('Error in trackChangesAndCommit:', error);
+        }
+
         // Git add .
-        exec('git add .', async (err, stdout, stderr) => {
-            if (err || stderr) {
-                console.error('Error executing git add command:', err || stderr);
+        exec('git add .', async (errAdd, stdoutAdd, stderrAdd) => {
+            if (errAdd || stderrAdd) {
+                console.error('Error executing git add command:', errAdd || stderrAdd);
                 return;
             }
 
-            // Get output from trackChangesAndCommit()
-            try {
-                const changesOutput = await trackChangesAndCommit();
+            // Git commit -m "<commit_message>"
+            exec(`${changesOutput}`, async (errCommit, stdoutCommit, stderrCommit) => {
+                if (errCommit || stderrCommit) {
+                    console.error('Error executing git commit command:', errCommit || stderrCommit);
+                    return;
+                }
 
-                // Log the output from trackChangesAndCommit()
-                console.log('Output from trackChangesAndCommit():', changesOutput);
-            } catch (error) {
-                console.error('Error in trackChangesAndCommit:', error);
-            }
+                // Success message after commit
+                console.log('Successfully committed changes:', stdoutCommit.trim());
+            });
         });
     } catch (error) {
         console.error('Error:', error);
     }
 };
 
-writeTerminal();//change
+writeTerminal();
