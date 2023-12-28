@@ -1,6 +1,5 @@
 const { exec } = require('child_process');
 
-// Function to get unstaged changes in all files
 function getUnstagedChanges() {
     return new Promise((resolve, reject) => {
         exec('git diff --name-only', (err, stdout, stderr) => {
