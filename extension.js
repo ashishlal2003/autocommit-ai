@@ -3,9 +3,6 @@
 const vscode = require('vscode');
 const { trackChangesAndCommit } = require('./gitChanges.js');
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
-
 /**
  * @param {vscode.ExtensionContext} context
  */
