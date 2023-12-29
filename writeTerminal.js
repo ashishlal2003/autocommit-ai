@@ -24,12 +24,12 @@ const writeTerminal = async () => {
                 console.log('Successfully committed changes:', stdoutCommit.trim());
             });
         });
+
+        return changesOutput;
     } catch (error) {
         console.error('Error:', error);
     }
 };
-
-writeTerminal();
 
 module.exports = {
     writeTerminal
