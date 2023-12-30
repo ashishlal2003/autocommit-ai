@@ -1,9 +1,9 @@
 {
   "name": "autocommit-ai",
   "displayName": "AutoCommit AI",
-  "publisher": "AshishLal",
+  "publisher": "LalAshish",
   "description": "This tool allows you to automate the process of commiting git changes based on the user's local changes in the codebase.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -21,6 +21,10 @@
         "title": "AutoCommit AI"
       }
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashishlal2003/autocommit-ai.git"
   },
   "scripts": {
     "lint": "eslint .",
