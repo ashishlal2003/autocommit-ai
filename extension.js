@@ -3,7 +3,13 @@ const { writeTerminal } = require('./writeTerminal.js');
 
 function activate(context) {
     console.log('Congratulations, your extension "autocommit-ai" is now active!');
-    
+
+    const statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
+    statusBarItem.text = 'AutoCommit AI';
+    statusBarItem.tooltip = 'Click to perform AutoCommit AI action';
+    statusBarItem.command = 'autocommit-ai.autocommitai';
+    statusBarItem.show();
+
     let disposable = vscode.commands.registerCommand('autocommit-ai.autocommitai', async function () {
         try {
             const reply = await writeTerminal();
@@ -14,7 +20,7 @@ function activate(context) {
         }
     });
 
-    context.subscriptions.push(disposable);
+    context.subscriptions.push(disposable, statusBarItem);
 }
 
 function deactivate() {}
