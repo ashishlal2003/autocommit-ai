@@ -4,7 +4,7 @@ const vscode = require('vscode');
 
 const writeTerminal = async () => {
     try {
-        const workspaceFolder = vscode.workspace.rootPath; // Get the workspace folder
+        const workspaceFolder = vscode.workspace.rootPath;
 
         // Change directory to the workspace folder
         process.chdir(workspaceFolder);

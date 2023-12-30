@@ -6,16 +6,6 @@ function activate(context) {
     
     let disposable = vscode.commands.registerCommand('autocommit-ai.autocommitai', async function () {
         try {
-            const workspaceFolders = vscode.workspace.workspaceFolders;
-            if (workspaceFolders) {
-                workspaceFolders.forEach(folder => {
-                    console.log('Workspace folder:', folder.uri.fsPath);
-                });
-            } else {
-                console.log('No workspace folder');
-            }
-            
-            console.log('Extension directory:', __dirname); // Log the current directory
             const reply = await writeTerminal();
             vscode.window.showInformationMessage(`The commit message is: ${reply}`);
         } catch (error) {
