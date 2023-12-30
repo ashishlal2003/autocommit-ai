@@ -3,7 +3,7 @@
   "displayName": "AutoCommit AI",
   "publisher": "LalAshish",
   "description": "This tool allows you to automate the process of commiting git changes based on the user's local changes in the codebase.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.85.0"
   },
