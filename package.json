@@ -1,6 +1,7 @@
 {
   "name": "autocommit-ai",
   "displayName": "AutoCommit AI",
+  "publisher": "AshishLal",
   "description": "This tool allows you to automate the process of commiting git changes based on the user's local changes in the codebase.",
   "version": "0.0.1",
   "engines": {
@@ -16,8 +17,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "autocommit-ai.helloWorld",
-        "title": "Hello World"
+        "command": "autocommit-ai.autocommitai",
+        "title": "AutoCommit AI"
       }
     ]
   },
