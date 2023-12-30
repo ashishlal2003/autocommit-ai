@@ -2,6 +2,7 @@ const { exec } = require('child_process');
 
 // Function to get unstaged changes in all files
 function getUnstagedChanges() {
+    console.log('Current directory:', process.cwd());
     return new Promise((resolve, reject) => {
         exec('git diff --name-only', (err, stdout, stderr) => {
             if (err) {
@@ -45,13 +46,3 @@ function getUnstagedFileDiff(filePath) {
 module.exports = {
     getUnstagedChanges
 };
-
-// // Example usage
-// getUnstagedChanges()
-//     .then(changes => {
-//         console.log('Unstaged changes in files:', changes);
-//         // Now you can process or send this information to Gemini LLM or use it further in your extension logic
-//     })
-//     .catch(error => {
-//         console.error('Error:', error);
-//     });
