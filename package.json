@@ -2,17 +2,13 @@
   "name": "autocommit-ai",
   "displayName": "AutoCommit AI",
   "publisher": "LalAshish",
-  "description": "This tool allows you to automate the process of commiting git changes based on the user's local changes in the codebase.",
-  "version": "0.1.1",
+  "description": "This tool allows you to automate the process of committing git changes based on the user's local changes in the codebase.",
+  "version": "0.1.0",
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": [
-    "Other"
-  ],
-  "activationEvents": [
-    "onCommand:workbench.files.openFolder"
-  ],
+  "categories": ["Other"],
+  "activationEvents": ["onStartupFinished"],
   "main": "./extension.js",
   "contributes": {
     "commands": [
