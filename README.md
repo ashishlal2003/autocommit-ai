@@ -14,6 +14,10 @@ This extension allows you to commit your changes automatically. It uses AI to ge
 
 ## Release Notes
 
+### [0.2.1] - 2024-01-01
+
+Documentation updated.
+
 ### [0.2.0] - 2024-01-01
 
 - The shortcut now appears by default in the Status Bar.
