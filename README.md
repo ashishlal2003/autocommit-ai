@@ -13,7 +13,16 @@ Open up your command pallette and type in `AutoCommit AI` to start the extension
 
 ## Release Notes
 
-### [0.0.1] - 2023-12-31
+### [0.2.0] - 2024-01-01
+
+- The shortcut now appears by default in the Status Bar.
+- A loader is added for the wait time of the commit message.
+
+### [0.1.1] - 2023-12-30
+
+A shortcut added in the Status Bar.
+
+### [0.1.0] - 2023-12-31
 
 Initial release of an extension allowing you to commit your changes automatically.
 

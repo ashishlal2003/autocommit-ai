@@ -12,8 +12,11 @@ function activate(context) {
 
     let disposable = vscode.commands.registerCommand('autocommit-ai.autocommitai', async function () {
         try {
-            const reply = await writeTerminal();
-            vscode.window.showInformationMessage(`The commit message is: ${reply}`);
+            const progressOptions = { location: vscode.ProgressLocation.Notification, title: 'AutoCommit in progress...' };
+            await vscode.window.withProgress(progressOptions, async () => {
+                const reply = await writeTerminal();
+                vscode.window.showInformationMessage(`The commit message is: ${reply}`);
+            });
         } catch (error) {
             console.error(error);
             vscode.window.showInformationMessage(`The extension says: ${error}`);
