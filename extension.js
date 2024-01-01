@@ -1,3 +1,4 @@
+//Extension for AutoCommit AI
 const vscode = require('vscode');
 const { writeTerminal } = require('./writeTerminal.js');
 

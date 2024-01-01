@@ -8,8 +8,9 @@ This extension allows you to commit your changes automatically. It uses AI to ge
 
 ## Usage
 
-Download the extension from the VS Code Marketplace (AutoCommit AI) and install it.
-Open up your command pallette and type in `AutoCommit AI` to start the extension. You can also use the shortcut `Ctrl+Shift+P`(Windows) or `Cmd+Shift+P`(MacOS)  to open up the command pallette.
+- Download the extension from the VS Code Marketplace (AutoCommit AI) and install it.
+- Just click the extension mentioned in the Status Bar to start the extension.
+- Alternatively, open up your command pallette and type in `AutoCommit AI` to start the extension. You can also use the shortcut `Ctrl+Shift+P`(Windows) or `Cmd+Shift+P`(MacOS)  to open up the command pallette.
 
 ## Release Notes
 
